@@ -1,4 +1,3 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -8,23 +7,23 @@ plugins {
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
 
-    kotlin("native.cocoapods")
+    kotlin("native.cocoapods") version "2.0.0"
 }
 
 kotlin {
 
     cocoapods {
-        version = "1.0.0"
-        summary = "Some description for the Shared Module"
-        homepage = "Link to the Shared Module homepage"
-
-        ios.deploymentTarget = "14.1"
+        version = "1.0"
+        summary = "Some description for a Kotlin/Native module"
+        homepage = "Link to a Kotlin/Native module homepage"
 
         framework {
             baseName = "composeApp"
-            isStatic = true
+
+            isStatic = false
         }
-        pod("GoogleSignIn")
+        // pod("GoogleSignIn")
+        podfile = project.file("../iosApp/Podfile")
     }
 
     androidTarget {
