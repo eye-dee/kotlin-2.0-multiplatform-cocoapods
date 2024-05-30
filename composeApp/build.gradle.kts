@@ -22,7 +22,7 @@ kotlin {
 
             isStatic = false
         }
-        // pod("GoogleSignIn")
+        pod("GoogleSignIn")
         podfile = project.file("../iosApp/Podfile")
     }
 
