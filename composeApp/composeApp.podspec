@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
     spec.summary                  = 'Some description for a Kotlin/Native module'
     spec.vendored_frameworks      = 'build/cocoapods/framework/composeApp.framework'
     spec.libraries                = 'c++'
-                
+    spec.ios.deployment_target    = '17.0'
     spec.dependency 'GoogleSignIn'
                 
     if !Dir.exist?('build/cocoapods/framework/composeApp.framework') || Dir.empty?('build/cocoapods/framework/composeApp.framework')
