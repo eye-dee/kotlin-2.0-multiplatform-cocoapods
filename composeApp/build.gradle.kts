@@ -16,13 +16,13 @@ kotlin {
         version = "1.0"
         summary = "Some description for a Kotlin/Native module"
         homepage = "Link to a Kotlin/Native module homepage"
-
+        ios.deploymentTarget = "17.0"
         framework {
             baseName = "composeApp"
 
             isStatic = false
         }
-        // pod("GoogleSignIn")
+        pod("GoogleSignIn")
         podfile = project.file("../iosApp/Podfile")
     }
 
